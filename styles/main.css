@@ -1,0 +1,246 @@
+@charset "utf-8";
+
+body {
+	position: relative;
+	background-color: hsl(0, 0%, 12%);
+	color: hsl(0, 0%, 85%);
+	font-weight: 300;
+	width: 1000px;
+	margin: 0 auto;
+	cursor: default;
+}
+
+* {
+	font-family: "Roboto",sans-serif;
+}
+
+::-moz-selection {
+	background: hsl(210, 80%, 40%);
+	color: hsl(0, 0%, 100%);
+}
+::selection {
+	background: hsl(210, 80%, 40%);
+	color: hsl(0, 0%, 100%);
+}
+
+.preload {
+	position: absolute;
+	top: -10000px;
+	font-size: 0 !important;
+}
+
+a {
+	color: hsla(0, 0%, 100%, 1);
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+.noborder {
+	border: 0!important;
+}
+
+table:not(.boringtable) {
+	margin: 0 auto;
+	border-collapse: collapse;
+	border-spacing: 0;
+	empty-cells: show;
+	border: 1px solid hsl(0, 0%, 85%);
+	border-top: 0;
+	width: 100%;
+}
+
+table:not(.boringtable) thead {
+	background-color: hsl(0, 0%, 85%);
+	vertical-align: bottom;
+	text-align: left;
+	color: hsl(0, 0%, 20%);
+}
+
+table:not(.boringtable) tr:nth-child(even) {
+	background-color: hsla(0, 0%, 100%, .1);
+}
+
+table:not(.boringtable) td:first-child, table:not(.boringtable) .pure-table th:first-child {
+	border-left-width: 0;
+}
+
+table:not(.boringtable) td {
+	background-color: hsla(0, 0, 0, 0);
+}
+
+table:not(.boringtable) th:first-child {
+	border-left-width: 0;
+}
+
+table:not(.boringtable) td, table:not(.boringtable) th {
+	border-left: 1px solid hsl(0, 0%, 85%);
+	border-width: 0 0 0 1px;
+	font-size: inherit;
+	margin: 0;
+	overflow: visible;
+	padding: .5em 1em;
+}
+
+.keyword {
+	color: hsl(210, 100%, 70%);
+}
+
+.keyword2 {
+	color: hsl(210, 100%, 80%);
+}
+
+#header {
+	font-size: 2rem;
+	line-height: 1em;
+	text-transform: uppercase;
+	display: table-cell;
+	vertical-align: middle;
+	height: 50px;
+	width: 1000px;
+	font-weight: 300;
+}
+
+#header #logo {
+	margin: 0 auto;
+}
+
+text {
+	fill: hsl(0, 0%, 85%);
+}
+
+.hr {
+	background-color: hsl(0, 0%, 85%);
+	height: 1em;
+	margin: 0;
+}
+
+p {
+	display: block;
+	text-align: justify;
+}
+
+.spaceme span {
+	display: inline-block;
+}
+
+.columned {
+	text-indent: 2em;
+	-webkit-columns: 2;
+	-moz-columns: 2;
+	columns: 2;
+	-webkit-column-rule: 2px solid hsl(0, 0%, 85%);
+	-moz-column-rule: 2px solid hsl(0, 0%, 85%);
+	column-rule: 2px solid hsl(0, 0%, 85%);
+	-webkit-column-gap: 2em;
+	-moz-column-gap: 2em;
+	column-gap: 2em;
+}
+
+#intro {
+	font-size: 4em;
+	font-weight: 700;
+	padding: .25em 33% .25em 0;
+}
+
+#login {
+	font-size: 1.25rem;
+	position: absolute;
+	right: 1em;
+	top: 1.5em;
+}
+
+.button {
+	background: hsla(210, 80%, 40%, .7);
+	padding: .5em 1em;
+	height: 1em;
+	cursor: pointer;
+	line-height: 1em;
+	-webkit-transition: all 200ms ease-out;
+	-moz-transition: all 200ms ease-out;
+	-ms-transition: all 200ms ease-out;
+	-o-transition: all 200ms ease-out;
+	transition: all 200ms ease-out;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+.button:hover {
+	background: hsla(210, 80%, 40%, .9);
+	transform: scale(1.03, 1.03) !important;
+}
+
+.transition {
+	-webkit-transition: all 135ms ease-out;
+	-moz-transition: all 135ms ease-out;
+	-ms-transition: all 135ms ease-out;
+	-o-transition: all 135ms ease-out;
+	transition: all 135ms ease-out;
+}
+
+#footer * {
+	font-size: 1rem;
+	text-decoration: none;
+	padding: 1em 0;
+	font-weight: 100;
+	color: hsl(0,0%,100%);
+}
+
+#intro-twitch {
+	background: hsla(261, 43%, 45%, .8);
+	padding: .25rem 1rem;
+	margin: -.25rem 0;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+#intro:hover #intro-twitch {
+	background: hsla(261, 43%, 45%, 1);
+	color: hsl(0, 0%, 100%);
+	transform: scale(1.02,1.02);
+}
+#intro-twitch i {
+	width: 64px;
+	transform: translateY(4px) !important;
+}
+
+#channelName {
+	font-size: 0;
+	font-weight: 100;
+	line-height: 1em;
+	text-transform: uppercase;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	height: 100px;
+}
+
+svg {
+	font-size: 4rem;
+	height: 100%;
+	width: 1000px;
+}
+
+#channelStatistics {
+	table-layout: fixed;
+}
+
+#channelStatistics > * {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+rect.channelProfileBanner {
+	opacity: 0;
+}
+
+#header div {
+	margin: 0 auto;
+}
