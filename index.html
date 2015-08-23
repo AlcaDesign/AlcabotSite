@@ -6,7 +6,7 @@
 <link href="http://fonts.googleapis.com/css?family=Roboto:100,300,700" rel="stylesheet" type="text/css">
 <link href="styles/normalize.css" rel="stylesheet" type="text/css">
 <link href="styles/main.css" rel="stylesheet" type="text/css">
-<link href="styles/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <script src="scripts/jquery-2.1.4.min.js"></script>
 <!--<script src="/alcabot/scripts/underscore-min.js"></script>-->
 <script src="scripts/velocity.min.js"></script>
@@ -27,14 +27,17 @@
 		display: inline-block;
 	}
 	
-	#commands, #commands-custom {
+	#commands,
+	#commands-custom {
 		padding: 0 1em 1em 0;
 	}
-	#commands > .command, #commands-custom > .command {
+	#commands > .command,
+	#commands-custom > .command {
 		display: inline-block !important;
 	}
 	
-	#commands table:first-child .command, #commands-custom table:first-child .command {
+	#commands table:first-child .command,
+	#commands-custom table:first-child .command {
 		margin-top: 0;
 	}
 	
@@ -81,7 +84,8 @@
 	.command-params:before {
 		content: 'Params: ';
 	}
-	.command:hover .command-params, input[type="checkbox"]:checked + label .command .command-params/*, :target + label .command .command-params*/ {
+	.command:hover .command-params,
+	input[type="checkbox"]:checked + label .command .command-params/*, :target + label .command .command-params*/ {
 		max-height: 15px;
 		opacity: 1;
 		transform: translateX(0px) translateY(-6px) scaleY(1);
@@ -173,13 +177,17 @@
 						params: [ { name: 'channel', req: false } ],
 						desc: 'Get a list of the last 3 followers'
 				}, {
+						name: 'FollowerGoal',
+						params: [ { name: 'goal', req: true } ],
+						desc: 'Set the current follower goal'
+				}, {
+						name: 'IsFollowing',
+						params: [ { name: 'username', req: true }, { name: 'channel', req: false } ],
+						desc: 'Check if someone is following'
+				}, {
 						name: 'Status',
 						params: [ { name: 'channel', req: false } ],
 						desc: 'Get the current title/status'
-				}, {
-						name: 'FollowerGoal',
-						params: [ { name: 'channel', req: false } ],
-						desc: 'Set the current follower goal'
 				}, {
 						name: 'Game',
 						params: [ { name: 'channel', req: false } ],
@@ -192,6 +200,10 @@
 						name: 'StreamRes',
 						params: [ { name: 'channel', req: false } ],
 						desc: 'Get the stream resolution'
+				}, {
+						name: 'QualityOptions',
+						params: [ { name: 'channel', req: false } ],
+						desc: 'Check if the channel has quality options'
 				}, {
 						name: 'Chatters',
 						params: [ { name: 'channel', req: false } ],
@@ -209,17 +221,25 @@
 						params: [ { name: 'channel', req: false } ],
 						desc: 'Get who\'s hosting them'
 				}, {
-						name: 'TwitchStatus',
+						name: 'LinkToHost',
 						params: [],
-						desc: 'Get the Twitch Status ( <a href="http://twitchstatus.com/" target="_blank">twitchstatus.com</a> )'
-				}, {
+						desc: 'Get link to the hosted channel'
+				}, /*{
 						name: 'ModCount',
 						params: [],
 						desc: 'Get the mod count'
-				}, {
+				},*/ {
 						name: 'Created',
 						params: [ { name: 'user', req: true } ],
 						desc: 'Get when the account was created'
+				}, {
+						name: 'IsPartner',
+						params: [ { name: 'channel', req: false } ],
+						desc: 'Check if channel is a partner'
+				}, {
+						name: 'TwitchStatus',
+						params: [],
+						desc: 'Get the Twitch Status ( <a href="http://twitchstatus.com/" target="_blank">twitchstatus.com</a> )'
 				}, {
 						name: 'Define',
 						params: [ { name: 'word', req: true }, /*{ name: 'entry #', req: false }*/ ],
@@ -253,6 +273,10 @@
 						name: 'ListCommands',
 						params: [],
 						desc: 'List commands'
+				}, {
+						name: 'GetCommand',
+						params: [ { name: 'command', req: true } ],
+						desc: 'Get the raw command text'
 				},
 				
 			]/*,
