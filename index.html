@@ -1,0 +1,380 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Alcabot</title>
+<link href='http://fonts.googleapis.com/css?family=Roboto:100,300,700' rel='stylesheet' type='text/css'>
+<link href='http://greengoosemarketing.com/alcadesign/alcabot/styles/normalize.css' rel='stylesheet' type='text/css'>
+<link href='http://greengoosemarketing.com/alcadesign/alcabot/styles/main.css' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<!--<script src="/alcabot/scripts/underscore-min.js"></script>-->
+<script src="http://greengoosemarketing.com/alcadesign/alcabot/scripts/velocity.min.js"></script>
+<script src="http://greengoosemarketing.com/alcadesign/alcabot/scripts/velocity.ui.min.js"></script>
+<style>
+	
+	body > *:not(#header):not(.loadNotHidden):not(.loadNotHidden):not(.preload) {
+		display: none;
+	}
+	
+	#header {
+		font-size: 4rem;
+		font-weight: 100;
+		height: 100px;
+	}
+	
+	#logo {
+		display: inline-block;
+	}
+	
+	#commands, #commands-custom {
+		padding: 0 1em 1em 0;
+	}
+	#commands > .command, #commands-custom > .command {
+		display: inline-block !important;
+	}
+	
+	#commands table:first-child .command, #commands-custom table:first-child .command {
+		margin-top: 0;
+	}
+	
+	.command {
+		background: hsla(210, 80%, 40%, 0.7);
+		color: hsl(0, 100%, 100%);
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		padding: 1em;
+		line-height: 1em;
+		margin: 1em 0 0 1em;
+		cursor: pointer;
+	}
+	input[type="checkbox"] {
+		display: none;
+	}
+	input[type="checkbox"]:checked + label .command, .command:hover/*, :target + label .command*/ {
+		transform: translateY(-9px) scaleX(1.05);
+		background: hsla(210, 80%, 55%, 0.8)
+	}
+	#commands td, #commands-custom td {
+		vertical-align: top;
+		max-height: 92px;
+	}
+	td:first-child .command {
+		margin: 1em 0 0 0;
+	}
+	
+	.command-name {
+		font-size: 1.5em;
+		font-weight: 700;
+		margin-bottom: .5em;
+	}
+	.command-params {
+		font-size: .75em;
+		font-weight: 300;
+		max-height: 0;
+		/*overflow: hidden;*/
+		opacity: 0;
+		line-height: 1.5em;
+		transform: translateX(4px) scaleY(.3);
+	}
+	.command-params:before {
+		content: 'Params: ';
+	}
+	.command:hover .command-params, input[type="checkbox"]:checked + label .command .command-params/*, :target + label .command .command-params*/ {
+		max-height: 15px;
+		opacity: 1;
+		transform: translateX(0px) translateY(-6px) scaleY(1);
+	}
+	/*.command:hover .command-desc {
+		opacity: 0;
+		transform: translateY(1px) translateX(1px);
+		transition-delay: 0s;
+	}*/
+	.command-desc {
+		font-size: 1em;
+		font-weight: 300;
+		/*transition-delay: .1s;*/
+	}
+	
+	.emote {
+		vertical-align: baseline!important;
+		background-position: center center;
+		background-repeat: no-repeat;
+		display: inline-block;
+		/*vertical-align: middle;*/
+		margin: -5px 0;
+	}
+	
+</style>
+</head>
+
+<body>							
+
+<div><i class="preload fa fa-twitch"></i></div>
+
+<div id="header"><div id="logo" notstyle="/*transform: translateX(365px) translateY(200px) scaleX(2) scaleY(2)*/">Alcabot</div></div>
+	
+<noscript>
+	
+	<h1>This site <span style="text-decoration: underline">requires</span> JavaScript</h1>
+	
+</noscript>
+
+<div id="login" class="button">Login</div>
+
+<div class="hr" style="height: .25em;"></div>
+
+<div id="intro">
+	
+	A channel statistic- and information-aimed <a href="https://twitch.tv/" target="_blank"><span id="intro-twitch" class="transition"><i class="fa fa-twitch"></i> Twitch</span></a> chat bot
+	
+</div>
+
+<!--<div class="hr" style="height: .25em;"></div>
+
+<div style="background-color: hsla(210, 80%, 40%, 0.7); padding: 2rem 4rem; line-height: 1em; font-size: 8rem; font-weight: 700;">Minimal<br>&amp; Clean</div>-->
+
+<!--<div class="hr" style="height: .25em;"></div>
+
+<p class="columned"></p>-->
+
+<div class="hr" style="height: .25em;"></div>
+
+<h1>Commands:</h1>
+
+<div id="commands">
+</div>
+
+<h2>Custom commands:</h2>
+
+<div id="commands-custom">
+</div>
+
+<!--<h3>Command keywords:</h3>
+
+<div id="commands-keywords">
+</div>-->
+
+<div class="hr" style="height: .25em;"></div>
+
+<div id="footer"><a href="http://greengoosemarketing.com/alcadesign" target="_blank">Copyright © 2015 Jacob "Alca" Foster</a></div>
+
+<script>
+	
+	var commands = [
+				
+				{
+						name: 'Followers',
+						params: [ { name: 'channel', req: false } ],
+						desc: 'Get the amount of followers'
+				}, {
+						name: 'LastFollowers',
+						params: [ { name: 'channel', req: false } ],
+						desc: 'Get a list of the last 3 followers'
+				}, {
+						name: 'Status',
+						params: [ { name: 'channel', req: false } ],
+						desc: 'Get the current title/status'
+				}, {
+						name: 'FollowerGoal',
+						params: [ { name: 'channel', req: false } ],
+						desc: 'Set the current follower goal'
+				}, {
+						name: 'Game',
+						params: [ { name: 'channel', req: false } ],
+						desc: 'Get the current game'
+				}, {
+						name: 'FPS',
+						params: [ { name: 'channel', req: false } ],
+						desc: 'Get the average FPS'
+				}, {
+						name: 'StreamRes',
+						params: [ { name: 'channel', req: false } ],
+						desc: 'Get the stream resolution'
+				}, {
+						name: 'Chatters',
+						params: [ { name: 'channel', req: false } ],
+						desc: 'Get the amount of chatters'
+				}, {
+						name: 'Viewers',
+						params: [ { name: 'channel', req: false } ],
+						desc: 'Get the amount of viewers'
+				}, {
+						name: 'Hosting',
+						params: [ { name: 'channel', req: false } ],
+						desc: 'Get who they\'re hosting'
+				}, {
+						name: 'Hosts',
+						params: [ { name: 'channel', req: false } ],
+						desc: 'Get who\'s hosting them'
+				}, {
+						name: 'TwitchStatus',
+						params: [],
+						desc: 'Get the Twitch Status ( <a href="http://twitchstatus.com/" target="_blank">twitchstatus.com</a> )'
+				}, {
+						name: 'ModCount',
+						params: [],
+						desc: 'Get the mod count'
+				}, {
+						name: 'Created',
+						params: [ { name: 'user', req: true } ],
+						desc: 'Get when the account was created'
+				}, {
+						name: 'Define',
+						params: [ { name: 'word', req: true }, /*{ name: 'entry #', req: false }*/ ],
+						desc: 'Get a dictionary entry'
+				}, {
+						name: 'Math',
+						params: [ { name: 'expression...', req: true } ],
+						desc: 'Do some math'
+				}, {
+						name: 'Frac',
+						params: [ { name: 'expression...', req: true } ],
+						desc: 'Approximate a fraction <img class="emote" src="http://static-cdn.jtvnw.net/emoticons/v1/31/1.0">'
+				},
+				
+			],
+		commandsCustom = [
+				
+				{
+						name: 'AddCommand',
+						params: [ { name: 'command', req: true }, { name: 'response...', req: true } ],
+						desc: 'Add a custom command'
+				}, {
+						name: 'RemoveCommand',
+						params: [ { name: 'command', req: true } ],
+						desc: 'Remove a custom command'
+				}, {
+						name: 'EditCommand',
+						params: [ { name: 'command', req: true }, { name: 'response...', req: true } ],
+						desc: 'Edit a custom command'
+				}, {
+						name: 'ListCommands',
+						params: [],
+						desc: 'List commands'
+				},
+				
+			]/*,
+		commandsKeywords = [
+				
+				{
+						name: 'AddCommand',
+						params: [ { name: 'command', req: true }, { name: 'response...', req: true } ],
+						desc: 'Add a custom command'
+				}, {
+						name: 'RemoveCommand',
+						params: [ { name: 'command', req: true } ],
+						desc: 'Remove a custom command'
+				}, {
+						name: 'EditCommand',
+						params: [ { name: 'command', req: true }, { name: 'response...', req: true } ],
+						desc: 'Edit a custom command'
+				}, {
+						name: 'ListCommands',
+						params: [],
+						desc: 'List commands'
+				},
+				
+			]*/;
+	
+	$(document).ready(function(e) {
+			
+			var coms = $('#commands'),
+				comsCust = $('#commands-custom')/*,
+				comsKeyw = $('#commands-keywords')*/;
+			
+			function addCommands(commands, comsEle) {
+				
+				var tr = $();
+				
+				for(var i in commands) {
+					
+					var c = commands[i],
+						commandTD = $('<td/>'),
+						command = $('<div/>'),
+						checkbox = $('<input>'),
+						commandLabel = $('<label/>'),
+						commandDiv = $('<div/>'),
+						name = $('<div/>'),
+						params = $('<div/>'),
+						desc = $('<div/>'),
+						ID = 'command-' + c.name;
+					
+					checkbox.attr('id', ID).attr('type', 'checkbox').addClass('command-checkbox');
+					commandLabel.attr('for', ID);
+					command.css('max-height', '76px');
+					commandDiv.addClass('command transition');
+					name.addClass('command-name');
+					params.addClass('command-params transition');
+					desc.addClass('command-desc');
+					
+					name.html(c.name);
+					if(c.hasOwnProperty('params') && c.params.length > 0) {
+						var parms = [];
+						for(var i in c.params) {
+							var p = c.params[i], m = p.name;
+							parms.push((p.req ? '&lt;' : '[') + m + (p.req ? '&gt;' : ']'));
+						}
+						params.html(parms.join(' '));
+					}
+					else {
+						params.html('none');
+					}
+					desc.html(c.desc);
+					
+					tr = tr.add(commandTD.append(command.append(checkbox, commandLabel.append(commandDiv.append(name,params,desc)))));
+					
+				}
+				
+				var i = 0, j = 0, l = tr.length;
+				
+				while(i < l) {
+					
+					var g = 4,
+						group = tr.slice(i, i + g),
+						table = $('<table>').addClass('boringtable').append($('<tr>').append(group));
+					
+					if(group.length == 4) {
+						table.css('width', '1000px');
+					}
+					
+					comsEle.append(table);
+					
+					i += g;
+					
+				}
+			}
+			
+			addCommands(commands, coms);
+			addCommands(commandsCustom, comsCust);
+			//addCommands(commandsKeywords, comsKeyw);
+			
+			/*$('#logo').velocity({ translateX: 365, translateY: 200, scaleX: 2.25, scaleY: 2.25 }, { duration: 0 })
+			
+			$('#logo').velocity({ translateX: 0, translateY: 0, scaleX: 1, scaleY: 1 }, { delay: 1000, easing: 'easeOutQuart', duration: 1000 })*/
+			
+			$(window).load(function(e) {
+					
+					$(':target').prop('checked', true);
+					
+					$('[id^="command-"]').click(function(e) {
+							
+							if(this.checked) {
+								location.hash = this.id;
+							}
+							else location.hash = '_';
+							
+						});
+					
+					$('body *').not('script, #header, #header > *, #commands *, #commands-custom *').velocity('transition.slideDownIn', { stagger: 30, drag: true, delay: 200 });
+					
+				});
+			
+		});
+	
+</script>					
+
+</body>
+</html>
