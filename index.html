@@ -28,15 +28,18 @@
 	}
 	
 	#commands,
+	#commands-partner,
 	#commands-custom {
 		padding: 0 1em 1em 0;
 	}
 	#commands > .command,
+	#commands-partner > .command,
 	#commands-custom > .command {
 		display: inline-block !important;
 	}
 	
 	#commands table:first-child .command,
+	#commands-partner table:first-child .command,
 	#commands-custom table:first-child .command {
 		margin-top: 0;
 	}
@@ -59,7 +62,9 @@
 		transform: translateY(-9px) scaleX(1.05);
 		background: hsla(210, 80%, 55%, 0.8)
 	}
-	#commands td, #commands-custom td {
+	#commands td,
+	#commands-partner td,
+	#commands-custom td {
 		vertical-align: top;
 		max-height: 92px;
 	}
@@ -150,6 +155,11 @@
 <div id="commands">
 </div>
 
+<h2>Partner commands:</h2>
+
+<div id="commands-partner">
+</div>
+
 <h2>Custom commands:</h2>
 
 <div id="commands-custom">
@@ -175,17 +185,17 @@
 				}, {
 						name: 'LastFollowers',
 						params: [ { name: 'channel', req: false } ],
-						desc: 'Get a list of the last 3 followers'
+						desc: 'Get a list of the last 5 followers'
 				}, {
-						name: 'FollowerGoal',
+						name: 'FollowGoal',
 						params: [ { name: 'goal', req: true } ],
 						desc: 'Set the current follower goal'
 				}, {
 						name: 'IsFollowing',
-						params: [ { name: 'username', req: true }, { name: 'channel', req: false } ],
+						params: [ { name: 'username', req: false }, { name: 'channel', req: false } ],
 						desc: 'Check if someone is following'
 				}, {
-						name: 'Status',
+						name: 'Title',
 						params: [ { name: 'channel', req: false } ],
 						desc: 'Get the current title/status'
 				}, {
@@ -245,6 +255,10 @@
 						params: [ { name: 'word', req: true }, /*{ name: 'entry #', req: false }*/ ],
 						desc: 'Get a dictionary entry'
 				}, {
+						name: 'Thesaurus',
+						params: [ { name: 'word', req: true }, /*{ name: 'entry #', req: false }*/ ],
+						desc: 'Get a thesaurus entry'
+				}, {
 						name: 'Math',
 						params: [ { name: 'expression...', req: true } ],
 						desc: 'Do some math'
@@ -252,6 +266,44 @@
 						name: 'Frac',
 						params: [ { name: 'expression...', req: true } ],
 						desc: 'Approximate a fraction <img class="emote" src="http://static-cdn.jtvnw.net/emoticons/v1/31/1.0">'
+				}, {
+						name: 'AlcaWeather',
+						params: [ { name: 'location', req: true } ],
+						desc: 'Get basic weather info for a location'
+				}, {
+						name: 'AlcaUptime',
+						params: [],
+						desc: 'Get the stream uptime'
+				},/* {
+						name: 'YTSubs',
+						params: [],
+						desc: 'Get YouTube sub count and latest video'
+				},*/
+				
+			],
+		commandsPartner = [
+				
+				{
+						name: 'Subs',
+						params: [],
+						desc: 'Get the subscriber count'
+				}, {
+						name: 'IsSub',
+						params: [ { name: 'username', req: false } ],
+						desc: 'Check if someone is subscribed'
+				}, {
+						name: 'LastSubs',
+						params: [],
+						desc: 'Get the last 15 subscribers'
+				}, {
+						name: 'SubGoal',
+						params: [ { name: 'goal', req: true } ],
+						desc: 'Set the current subscriber goal'
+				}, {
+						name: 'Emotes',
+						params: [],
+						notes: [{ note: 'Requires "Alca" to be subscribed' }],
+						desc: 'Get the current list of available emotes'
 				},
 				
 			],
@@ -279,32 +331,12 @@
 						desc: 'Get the raw command text'
 				},
 				
-			]/*,
-		commandsKeywords = [
-				
-				{
-						name: 'AddCommand',
-						params: [ { name: 'command', req: true }, { name: 'response...', req: true } ],
-						desc: 'Add a custom command'
-				}, {
-						name: 'RemoveCommand',
-						params: [ { name: 'command', req: true } ],
-						desc: 'Remove a custom command'
-				}, {
-						name: 'EditCommand',
-						params: [ { name: 'command', req: true }, { name: 'response...', req: true } ],
-						desc: 'Edit a custom command'
-				}, {
-						name: 'ListCommands',
-						params: [],
-						desc: 'List commands'
-				},
-				
-			]*/;
+			];
 	
 	$(document).ready(function(e) {
 			
 			var coms = $('#commands'),
+				comsPart = $('#commands-partner'),
 				comsCust = $('#commands-custom')/*,
 				comsKeyw = $('#commands-keywords')*/;
 			
@@ -372,6 +404,7 @@
 			
 			addCommands(commands, coms);
 			addCommands(commandsCustom, comsCust);
+			addCommands(commandsPartner, comsPart);
 			//addCommands(commandsKeywords, comsKeyw);
 			
 			/*$('#logo').velocity({ translateX: 365, translateY: 200, scaleX: 2.25, scaleY: 2.25 }, { duration: 0 })
@@ -391,7 +424,7 @@
 							
 						});
 					
-					$('body *').not('script, #header, #header > *, #commands *, #commands-custom *').velocity('transition.slideDownIn', { stagger: 30, drag: true, delay: 200 });
+					$('body *').not('script, #header, #header > *, #commands *, #commands-custom *, #commands-partner *').velocity('transition.slideDownIn', { stagger: 30, drag: true, delay: 200 });
 					
 				});
 			
