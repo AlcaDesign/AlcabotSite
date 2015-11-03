@@ -90,26 +90,51 @@
 	.command-params:before {
 		content: 'Params: ';
 	}
-	.command-params span {
-		padding: 1px 2px;
+	.command-params div {
+		padding: 0px 3px;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		border-radius: 4px;
+		display: inline-block;
 	}
-	.command-params span:before {
+	.command-params div:not(:last-child) {
+		margin-right: 4px;
+	}
+	.command-params div:before {
 		content: '[';
 	}
-	.command-params span:after {
+	.command-params div:after {
 		content: ']';
 	}
-	.command-params span.req-param:before {
+	.command-params div.req-param:before {
 		content: '<';
 	}
-	.command-params span.req-param:after {
+	.command-params div.req-param:after {
 		content: '>';
 	}
-	span.badge-broad {
+	div.badge-broad {
+		background-image: url("images/broad.svg");
 		background-color: hsl(0, 81%, 50%);
+		background-position: 1px center;
+		background-size: 14px;
+		background-repeat: no-repeat;
+		padding: 0px 4px 0px 16px;
 	}
-	span.badge-mod {
+	div.badge-mod {
+		background-image: url("images/mod.svg");
 		background-color: hsl(105, 89%, 36%);
+		background-position: 1px center;
+		background-size: 14px;
+		background-repeat: no-repeat;
+		padding: 0px 4px 0px 16px;
+	}
+	div.badge-sub {
+		background-image: url("images/sub.svg");
+		background-color: hsla(0, 0%, 100%, .2);
+		background-position: 1px center;
+		background-size: 14px;
+		background-repeat: no-repeat;
+		padding: 0px 4px 0px 16px;
 	}
 	
 	.command:hover .command-params,
@@ -329,7 +354,7 @@
 				}, {
 						name: 'Frac',
 						params: [ { name: 'expression...', req: true } ],
-						desc: 'Approximate a fraction <img class="emote" src="http://static-cdn.jtvnw.net/emoticons/v1/31/1.0">'
+						desc: 'Approximate a fraction <img class="emote" src="https://static-cdn.jtvnw.net/emoticons/v1/31/1.0">'
 				}, {
 						name: 'AlcaWeather',
 						params: [ { name: 'location', req: true } ],
@@ -448,7 +473,7 @@
 						//var parms = [];
 						for(var i in c.params) {
 							var p = c.params[i], m = p.name, l = p.limit || c.limit || null;
-							params.append('<span class="' + (l ? 'badge-' + l : '') + ' ' + (p.req ? 'req-param' : '') + '">' + /*(p.req ? '&lt;' : '[') +*/ m + /*(p.req ? '&gt;' : ']') +*/ '</span> ');
+							params.append('<div class="' + (l ? 'badge-' + l : '') + ' ' + (p.req ? 'req-param' : '') + '">' + /*(p.req ? '&lt;' : '[') +*/ m + /*(p.req ? '&gt;' : ']') +*/ '</div>');
 						}
 						//params.html(parms.join(' '));
 					}
@@ -457,7 +482,21 @@
 					}
 					desc.html(c.desc);
 					
-					tr = tr.add(commandTD.append(command.append(checkbox, commandLabel.append(commandDiv.append(name,params,desc,badge)))));
+					tr = tr.add(
+								commandTD.append(
+										command.append(
+												checkbox,
+												commandLabel.append(
+														commandDiv.append(
+																name,
+																params,
+																desc,
+																badge
+															)
+													)
+											)
+									)
+							);
 					
 				}
 				
