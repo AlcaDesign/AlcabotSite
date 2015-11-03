@@ -54,6 +54,7 @@
 		line-height: 1em;
 		margin: 1em 0 0 1em;
 		cursor: pointer;
+		position: relative;
 	}
 	input[type="checkbox"] {
 		display: none;
@@ -89,6 +90,28 @@
 	.command-params:before {
 		content: 'Params: ';
 	}
+	.command-params span {
+		padding: 1px 2px;
+	}
+	.command-params span:before {
+		content: '[';
+	}
+	.command-params span:after {
+		content: ']';
+	}
+	.command-params span.req-param:before {
+		content: '<';
+	}
+	.command-params span.req-param:after {
+		content: '>';
+	}
+	span.badge-broad {
+		background-color: hsl(0, 81%, 50%);
+	}
+	span.badge-mod {
+		background-color: hsl(105, 89%, 36%);
+	}
+	
 	.command:hover .command-params,
 	input[type="checkbox"]:checked + label .command .command-params/*, :target + label .command .command-params*/ {
 		max-height: 15px;
@@ -113,6 +136,35 @@
 		display: inline-block;
 		/*vertical-align: middle;*/
 		margin: -5px 0;
+	}
+	
+	
+	.badge {
+		height: 18px;
+		min-width: 18px;
+		display: inline-block;
+		vertical-align: middle;
+		background-size: 100%;
+	}
+	.badge/*:not(.tiny)*/ {
+		position: absolute;
+		top: 5px;
+		right: 5px;
+	}
+	/*.badge.tiny {
+		height: 12px;
+		min-width: 12px;
+		display: inline-block;
+		vertical-align: middle;
+	}*/
+	.badge.broad {
+		background-image: url("images/broad.svg");
+	}
+	.badge.mod {
+		background-image: url("images/mod.svg");
+	}
+	.badge.sub {
+		background-image: url("images/sub.svg");
 	}
 	
 </style>
@@ -180,55 +232,62 @@
 				
 				{
 						name: 'Followers',
-						params: [ { name: 'channel', req: false } ],
+						params: [ { name: 'channel', req: false, limit: 'mod' } ],
 						desc: 'Get the amount of followers'
 				}, {
 						name: 'LastFollowers',
-						params: [ { name: 'channel', req: false } ],
+						params: [ { name: 'channel', req: false, limit: 'mod' } ],
 						desc: 'Get a list of the last 5 followers'
 				}, {
 						name: 'FollowGoal',
 						params: [ { name: 'goal', req: true } ],
+						limit: 'mod',
 						desc: 'Set the current follower goal'
 				}, {
 						name: 'IsFollowing',
-						params: [ { name: 'username', req: false }, { name: 'channel', req: false } ],
+						params: [ { name: 'username', req: false, limit: 'mod' }, { name: 'channel', req: false, limit: 'mod' } ],
+						limit: 'sub',
 						desc: 'Check if someone is following'
 				}, {
 						name: 'Title',
-						params: [ { name: 'channel', req: false } ],
+						params: [ { name: 'channel', req: false, limit: 'mod' } ],
 						desc: 'Get the current title/status'
 				}, {
 						name: 'Game',
-						params: [ { name: 'channel', req: false } ],
+						params: [ { name: 'channel', req: false, limit: 'mod' } ],
 						desc: 'Get the current game'
 				}, {
 						name: 'FPS',
-						params: [ { name: 'channel', req: false } ],
+						params: [ { name: 'channel', req: false, limit: 'mod' } ],
 						desc: 'Get the average FPS'
 				}, {
 						name: 'StreamRes',
-						params: [ { name: 'channel', req: false } ],
+						params: [ { name: 'channel', req: false, limit: 'mod' } ],
 						desc: 'Get the stream resolution'
 				}, {
 						name: 'QualityOptions',
 						params: [ { name: 'channel', req: false } ],
+						limit: 'broad',
 						desc: 'Check if the channel has quality options'
 				}, {
 						name: 'Chatters',
 						params: [ { name: 'channel', req: false } ],
+						limit: 'mod',
 						desc: 'Get the amount of chatters'
 				}, {
 						name: 'Viewers',
 						params: [ { name: 'channel', req: false } ],
+						limit: 'mod',
 						desc: 'Get the amount of viewers'
 				}, {
 						name: 'Hosting',
 						params: [ { name: 'channel', req: false } ],
+						limit: 'mod',
 						desc: 'Get who they\'re hosting'
 				}, {
 						name: 'Hosts',
 						params: [ { name: 'channel', req: false } ],
+						limit: 'mod',
 						desc: 'Get who\'s hosting them'
 				}, {
 						name: 'LinkToHost',
@@ -240,23 +299,28 @@
 						desc: 'Get the mod count'
 				},*/ {
 						name: 'Created',
-						params: [ { name: 'user', req: true } ],
+						params: [ { name: 'user', req: true, limit: 'mod' } ],
+						limit: 'sub',
 						desc: 'Get when the account was created'
 				}, {
 						name: 'IsPartner',
 						params: [ { name: 'channel', req: false } ],
+						limit: 'mod',
 						desc: 'Check if channel is a partner'
 				}, {
 						name: 'TwitchStatus',
 						params: [],
+						limit: 'mod',
 						desc: 'Get the Twitch Status ( <a href="http://twitchstatus.com/" target="_blank">twitchstatus.com</a> )'
 				}, {
 						name: 'Define',
 						params: [ { name: 'word', req: true }, /*{ name: 'entry #', req: false }*/ ],
+						limit: 'mod',
 						desc: 'Get a dictionary entry'
 				}, {
 						name: 'Thesaurus',
 						params: [ { name: 'word', req: true }, /*{ name: 'entry #', req: false }*/ ],
+						limit: 'mod',
 						desc: 'Get a thesaurus entry'
 				}, {
 						name: 'Math',
@@ -272,7 +336,7 @@
 						desc: 'Get basic weather info for a location'
 				}, {
 						name: 'AlcaUptime',
-						params: [],
+						params: [ { name: 'channel', req: false, limit: 'mod' } ],
 						desc: 'Get the stream uptime'
 				}, {
 						name: 'TwitchStats',
@@ -290,18 +354,22 @@
 				{
 						name: 'Subs',
 						params: [],
+						limit: 'sub',
 						desc: 'Get the subscriber count'
 				}, {
 						name: 'IsSub',
-						params: [ { name: 'username', req: false } ],
+						params: [ { name: 'username', req: false, limit: 'mod' } ],
+						limit: 'sub',
 						desc: 'Check if someone is subscribed'
 				}, {
 						name: 'LastSubs',
 						params: [],
+						limit: 'mod',
 						desc: 'Get the last 15 subscribers'
 				}, {
 						name: 'SubGoal',
 						params: [ { name: 'goal', req: true } ],
+						limit: 'mod',
 						desc: 'Set the current subscriber goal'
 				}, {
 						name: 'Emotes',
@@ -316,14 +384,17 @@
 				{
 						name: 'AddCommand',
 						params: [ { name: 'command', req: true }, { name: 'response...', req: true } ],
+						limit: 'mod',
 						desc: 'Add a custom command'
 				}, {
 						name: 'RemoveCommand',
 						params: [ { name: 'command', req: true } ],
+						limit: 'mod',
 						desc: 'Remove a custom command'
 				}, {
 						name: 'EditCommand',
 						params: [ { name: 'command', req: true }, { name: 'response...', req: true } ],
+						limit: 'mod',
 						desc: 'Edit a custom command'
 				}, {
 						name: 'ListCommands',
@@ -332,6 +403,7 @@
 				}, {
 						name: 'GetCommand',
 						params: [ { name: 'command', req: true } ],
+						limit: 'mod',
 						desc: 'Get the raw command text'
 				},
 				
@@ -359,6 +431,7 @@
 						name = $('<div/>'),
 						params = $('<div/>'),
 						desc = $('<div/>'),
+						badge = $('<div/>'),
 						ID = 'command-' + c.name;
 					
 					checkbox.attr('id', ID).attr('type', 'checkbox').addClass('command-checkbox');
@@ -368,22 +441,23 @@
 					name.addClass('command-name');
 					params.addClass('command-params transition');
 					desc.addClass('command-desc');
+					badge.addClass('badge ' + c.limit);
 					
 					name.html(c.name);
 					if(c.hasOwnProperty('params') && c.params.length > 0) {
-						var parms = [];
+						//var parms = [];
 						for(var i in c.params) {
-							var p = c.params[i], m = p.name;
-							parms.push((p.req ? '&lt;' : '[') + m + (p.req ? '&gt;' : ']'));
+							var p = c.params[i], m = p.name, l = p.limit || c.limit || null;
+							params.append('<span class="' + (l ? 'badge-' + l : '') + ' ' + (p.req ? 'req-param' : '') + '">' + /*(p.req ? '&lt;' : '[') +*/ m + /*(p.req ? '&gt;' : ']') +*/ '</span> ');
 						}
-						params.html(parms.join(' '));
+						//params.html(parms.join(' '));
 					}
 					else {
 						params.html('none');
 					}
 					desc.html(c.desc);
 					
-					tr = tr.add(commandTD.append(command.append(checkbox, commandLabel.append(commandDiv.append(name,params,desc)))));
+					tr = tr.add(commandTD.append(command.append(checkbox, commandLabel.append(commandDiv.append(name,params,desc,badge)))));
 					
 				}
 				
