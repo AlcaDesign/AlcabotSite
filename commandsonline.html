@@ -1,0 +1,259 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Alcabot - Commands Online</title>
+<link href="http://fonts.googleapis.com/css?family=Roboto:100,300,700" rel="stylesheet" type="text/css">
+<link href="styles/normalize.css" rel="stylesheet" type="text/css">
+<link href="styles/main.css" rel="stylesheet" type="text/css">
+<!--<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
+<script src="scripts/jquery-2.1.4.min.js"></script>
+<script src="scripts/math-2.4.1.min.js"></script>
+<script src="scripts/frac.js"></script>
+<!--<script src="/alcabot/scripts/underscore-min.js"></script>-->
+<!--<script src="scripts/velocity.min.js"></script>
+<script src="scripts/velocity.ui.min.js"></script>-->
+<style>
+	
+	/*#header {
+		font-size: 4rem;
+		font-weight: 100;
+		height: 100px;
+	}
+	
+	#logo {
+		display: inline-block;
+	}*/
+	input {
+	    font-family: inherit;
+	    background-color: hsl(0, 0%, 18%);
+	    border: 0;
+	    color: inherit;
+	    padding: 6px 8px;
+	    border-bottom: 1px solid hsla(210, 80%, 40%, 0.3);
+	    outline: 0;
+	    width: 200px;
+	    max-height: 30px;
+	    transition: all 200ms;
+		box-sizing: border-box;
+		vertical-align: top;
+	}
+	input:valid {
+	    border-bottom: 1px solid hsla(210, 80%, 40%, 0.7);
+	}
+	input[type="button"] {
+		width: initial;
+	}
+	
+	.section {
+		padding: 16px 0;
+	}
+	.section:first-child {
+		padding-bottom: 0;
+	}
+	
+	.command {
+	    padding: 8px 0;
+	}
+	.comName {
+	    margin-bottom: 8px;
+	    font-size: 1.5em;
+	}
+	.comDescription {
+		margin-bottom: 4px;
+	}
+	
+	.emote {
+		vertical-align: baseline!important;
+		background-position: center center;
+		background-repeat: no-repeat;
+		display: inline-block;
+		/*vertical-align: middle;*/
+		margin: -5px 0;
+	}
+	
+</style>
+</head>
+
+<body>
+
+<div><i class="preload fa fa-twitch"></i></div>
+
+<div id="header"><div id="logo" notstyle="/*transform: translateX(365px) translateY(200px) scaleX(2) scaleY(2)*/">Alcabot</div></div>
+	
+<noscript>
+	
+	<h1>This site <span style="text-decoration: underline">requires</span> JavaScript</h1>
+	
+</noscript>
+
+<!--<div id="login" class="button">Login</div>-->
+
+<div class="hr" style="height: .25em;"></div>
+
+<div>
+	
+	<div class="section" id="channel">
+		
+		<div class="output"></div>
+		<div class="command">
+			<div class="comName">All user/channel information</div>
+			<div class="input">
+				<input required placeholder="Twitch name">
+				<input type="button" value="Check">
+			</div>
+			<div class="output"></div>
+		</div>
+		
+	</div>
+
+	<div class="section" id="commands"></div>
+	
+</div>
+
+<div class="hr" style="height: .25em;"></div>
+
+<div id="footer"><a href="http://greengoosemarketing.com/alcadesign" target="_blank">Copyright © 2015 Jacob "Alca" Foster</a></div>
+
+<script>
+	
+	/* jshint esnext: true */
+	
+	var commands = $('#commands'),
+		coms = [
+				{		name: 'IsFollowing',
+						desc: 'Check if someone is following',
+						inputs: [ 'Name', 'Channel' ],
+						action: function(user, channel) {
+								fetchJSON('https://api.twitch.tv/kraken/users/' + user + '/follows/channels/' + channel)
+									.then(data => {
+											var message = '',
+												context = {
+														channel,
+														name: user,
+														time: null
+													};
+											if(data.status == 404 && (/is not following/.test(n.data.message) || /does not exist/.test(data.message) || !data.channel)) {
+												message = '%name% is not following %channel%';
+											}
+											else {
+												context.channel = data.channel.display_name;
+												context.time = agoAlt(data.created_at);
+												message = '%name% followed %channel% %time%';
+											}
+											return format(message, context);
+										});
+							}
+					},
+				{		name: 'TwitchStatus',
+						desc: 'Get the Twitch Status ( <a href="http://twitchstatus.com/" target="_blank">twitchstatus.com</a> )',
+						inputs: null,
+						action: function(input) {
+								fetchJSON('http://twitchstatus.com/api/status', { mode: 'no-cors' })
+									.then(data => {
+											var message = 'All looks fine! DendiFace',
+												statuses = [];
+											data.forEach((value, key, list) => {
+													var stats = value.servers.filter(n => n.status == 'offline');
+													if(stats.length > 0) {
+														statuses.push(format('%count% %type% server%s% %isAre% offline',
+																		{	count: stats.length,
+																			type: key,
+																			s: ss(stats.length),
+																			isAre: stats.length !== 1 ? 'are' : 'is'	}));
+													}
+												});
+											if(statuses.length > 0) {
+												message = humanList(statuses);
+											}
+											return format('Twitch Status: %message%',
+															{	message: message	});
+										});
+							}
+					},
+				{		name: 'Math',
+						desc: 'Do some math',
+						inputs: [ 'Expression' ],
+						action: function(input) {
+								var mathDone = null;
+								try {
+									mathDone = math.eval(input).toString().replace(/^\[(.*)\]$/, '$1')
+								} catch(e) {
+									mathDone = e;
+								}
+								return chat = format('%user%, %math%',
+											{	user: 'User',
+												math: mathDone	});
+							}
+					},
+				{		name: 'Frac',
+						desc: 'Approximate a fraction <img class="emote" src="https://static-cdn.jtvnw.net/emoticons/v1/31/1.0">',
+						inputs: [ 'Expression' ],
+						action: function(input) {
+								var p = math.eval(input),
+									f = frac(p, 100);
+								return chat = format('%user%, %param% is about %frac%',
+											{	user: 'User',
+												param: input,
+												frac: f[1] + '/' + f[2]	});
+							}
+					},
+				{		name: 'AlcaWeather',
+						desc: 'Get basic weather info for a location',
+						inputs: [ 'Location' ]
+					},
+				{		name: 'TwitchStats',
+						desc: 'Get stats for a game or Twitch',
+						inputs: [ 'Game (Or no game)' ]
+					},
+			];
+	
+	function fetchJSON(url, opts) {
+		//var response = null;
+		return fetch(url, opts || {})
+			.then(res => /*{
+					response = res;
+					return */res.json()
+				/*}*/)
+			/*.then(data => ({
+					response, data
+				}))*/;
+	}
+	
+	function ss(val) {
+		return val !== 1 ? 's' : '';
+	}
+	
+	function format(text, context) {
+		if(text === undefined) return '';
+		if(typeof context !== 'object') context = global;
+		return text.replace(/%([a-zA-Z0-9\(\)\[\]:\s]+)%/g, function(match, param, offset, string) {
+				if(context.hasOwnProperty(param)) return context[param];
+				return match;
+			});
+	}
+	
+	function toSentence(array, separator, lastSeparator, serial) {
+		separator = separator || ', ';
+		lastSeparator = lastSeparator || ' and ';
+		var a = array.slice(),
+		lastMember = a.pop();
+		if (array.length > 2 && serial) lastSeparator = separator.trimRight() + lastSeparator;
+		return a.length ? a.join(separator) + lastSeparator + lastMember : lastMember;
+	}
+	
+	function humanList(array, sep, lastSep) {
+		return toSentence(array, sep, lastSep, true);
+	}
+	
+	$(document).ready(function() {
+			
+			coms.forEach(com => {
+				});
+			
+		});
+	
+</script>					
+
+</body>
+</html>

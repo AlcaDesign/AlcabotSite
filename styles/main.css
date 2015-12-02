@@ -191,6 +191,7 @@ p {
 	padding: 1em 0;
 	font-weight: 100;
 	color: hsl(0,0%,100%);
+	display: block;
 }
 
 #intro-twitch {
