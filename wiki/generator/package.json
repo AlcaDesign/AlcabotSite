@@ -1,0 +1,15 @@
+{
+  "name": "alcabot-wiki-generator",
+  "version": "0.2.4",
+  "description": "Generate the Wiki Mardkwon for the GitHub repository",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "generator",
+    "wiki"
+  ],
+  "author": "Jacob \"Alca\" Foster",
+  "license": "ISC"
+}
