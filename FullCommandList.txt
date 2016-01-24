@@ -1,0 +1,562 @@
+                        *
+                    *       *
+              *                   *
+          *                           *
+        *   LIST OF                     *
+        *           ALCA BOT            *
+        *                    COMMANDS   *
+          *                           *
+               *                 *
+          * *                       * *
+         *   ~In no particular order   *
+           * *  *               *  * *
+                  *  *     *  *
+                       * *
+
+
+If the first parameter is meant to be a username, then you can probably use "me"
+instead of typing out your name. I have included this in some of the first
+examples and then stopped including it because it was getting tedious. Some
+commands will automatically use your name instead of the channel name and thus
+won't require you to type your name or even "me." Just experiment to find out!
+The first parameter can also be "this" to refer to the channel name without
+typing it out. ("!followers this DendiFace This is how many followers you have")
+
+I have also including SOME but not all aliases to commands. There are some
+aliases that are for spelling errors or otherwise. I tried to include the most
+commonly used command aliases.
+
+A general rule of thumb:
+Commands for regular viewers are limited to checking things about the current
+channel. If they're a subscriber, they can check themselves. They they're a mod,
+they can check other channels. Broadcaster has full access.
+
+"<param>" means required
+"[param]" means optional
+
+"(int)" means integer .. a number (without a period preferred)
+
+
+I'm sure I've missed a ton of stuff... If there are any question, don't hesitate
+to Tweet me: @AlcaMagic
+
+
+
+* followers [channel]
+	
+	Get a count of followers.
+	
+	!followers
+	!followers me
+	!follows Thanks4TheDome
+	
+	
+* firstfollower/secondfollower/thirdfollower [channel]
+	
+	Get your first/second/third follower
+	
+	!firstfollower
+	!secondfollower me
+	!thirdfollower Thanks4TheDome
+	
+	
+* firstfollowed/secondfollowed/thirdfollowed [username]
+	
+	Get your first/second/third follower
+	
+	!firstfollowed
+	!secondfollowed me
+	!thirdfollowed Thanks4TheDome
+	
+	
+* lastfollowers [channel]
+	
+	Get a list of your last followers
+	
+	!lastfollowers
+	!lastfollowers me
+	!recentfollowers Thanks4TheDome
+	
+	
+* following [username] [channel]
+	
+	Check if a user is following and how long ago
+	
+	!following
+	!following Thanks4TheDome
+	!followed me Thanks4TheDome
+	!isfollowing JohnnyVITO Thanks4TheDome
+	
+	
+* followergoal [goal (int)]
+	
+	Set your follower goal
+	
+	!followergoal
+	!followgoal 10000
+	
+	
+* subgoal [goal (int)]
+	
+	Set your subscriber goal
+	
+	!subgoal
+	!subgoal 10000
+	
+	
+* ispartner [channel]
+	
+	Check if a user is partnered
+	
+	!ispartner
+	!partner me
+	!partnered Thanks4TheDome
+	
+	
+* followinghosts [username]
+	
+	Get how many channels you are following is hosting.
+	
+	!followinghosts
+	!followinghosts 
+	
+	
+* status [channel]
+	
+	Check your current status/title
+	
+	!status
+	!title Thanks4TheDome
+	
+	
+* game [channel]
+	
+	Check your current game
+	
+	!game
+	!playing Thanks4TheDome
+	
+	
+* fps [channel]
+	
+	Check your average stream FPS
+	
+	!fps
+	!streamfps Thanks4TheDome
+	
+	
+* streamres [channel]
+	
+	Check your current stream resolution
+	
+	!streamres
+	!streamresolution Thanks4TheDome
+	
+	
+* chatters [channel]
+	
+	Check your current chatter count
+	
+	!chatters
+	!chatters Thanks4TheDome
+	
+	
+* ishere <username> [channel]
+	
+	Check if a user is here
+	
+	!ishere Thanks4TheDome
+	!ishere JohnnyVITO Thanks4TheDome
+	
+	
+* viewers [channel]
+	
+	Check the current viewer count
+	
+	!viewers
+	!viewers Thanks4TheDome
+	
+	
+* channelviews [channel]
+	
+	Check your channel view count
+	
+	!channelviews
+	!channelviews Thanks4TheDome
+	
+	
+* channelstats [channel]
+	
+	Check your channel stats (combines !viewers, !chatters, and !hosts). This
+	command may fail due to an error in the Twitch API
+	
+	!channelstats
+	!channelstats Thanks4TheDome
+	
+	
+* hosting [channel]
+	
+	Check who you're hosting
+	
+	!hosting
+	!hosting Thanks4TheDome
+	
+	
+* hosts [channel]
+	
+	Check how many hosts you have
+	
+	!hosts
+	!hosts Thanks4TheDome
+	
+	
+* linktohost
+	
+	Automatically give a link to the channel you're hosting (once you've hosted)
+	
+	!linktohost
+	
+	
+* created [username]
+	
+	Check how long ago you created your account
+	
+	!created
+	!created this
+	!created Thanks4TheDome
+	
+	
+* twitchstats [game / "this"]
+	
+	Check Twitch's statistics for all of Twitch or for a specific game
+	
+	Global stats:
+		!twitchstats
+	This channel's game's stats:
+		!twitchstats this
+	!twitchstats Call of Duty: Black Ops III
+	
+	
+* twitchstatus
+	
+	Check twitchstatus.com ... Just reports offline servers
+	
+	!twitchstatus
+	
+	
+* subs
+	
+	Check your current sub count (partner)
+	
+	!subs
+	
+	
+* lastsub
+	
+	Get a list of your last subscribers (partner)
+	
+	!lastsub
+	!lastsubscribers
+	!recentsubs
+	
+	
+* oldestsub
+	
+	Check your oldest active subscriber (partner)
+	
+	!oldestsub
+	!longestsub
+	!firstsub
+	
+	
+* issub [username]
+	
+	Check if someone is subscribed (partner)
+	
+	!issub
+	!checksub Thanks4TheDome
+	
+	
+* substoday
+	
+	Get a count of how many subs you've gotten since you started the stream
+	(partner)
+	
+	!dailysubs
+	
+	
+* lastseen <username>
+	
+	Find out the last time Alcabot saw a user in a channel it's in
+	
+	!lastseen Thanks4TheDome
+	
+	
+* nameavailable <name>
+	
+	Check if a username is available. This uses the same API as when you're
+	signing up for an account
+	
+	!nameavailable TurtleButtStuff
+	
+	
+* frac <...expression>
+	
+	Simplify an expression to at most n/100
+	
+	!frac 458/813
+	!frac 0.563345
+	
+	
+* moonphase
+	
+	Get the current moonphase
+	
+	!moonphase
+	
+	
+* math <...expression>
+	
+	Evaluate a math expression. You can define variables but it won't solve for
+	any variables for you. (Math.js)
+	
+	!math 9 + 10
+	!math apple = 4; apple^apple
+	!math cos(sin(tan(random(E)) * 8) * PI)
+	
+	
+* define <word>
+	
+	Retrieve the definition of a word. Allows only 1 word and always picks the
+	first definition in the list. Uses Wolfram|Alpha as the dictionary
+	
+	!define cat
+	
+	
+* thesaurus <word>
+	
+	Retrieves a list of synonyms for a word. Allows only 1 word. Uses
+	Wolfram|Alpha as the thesaurus
+	
+	!thesaurus apply
+	!thesaurus come
+	
+	
+* recentspammers
+	
+	Gets a list of the most recent spammers. The list of spammers comes from
+	NightDev's BTTV spammer socket. That data used to automatically ban a user
+	from the chat when they talk if they were on the list. This functionality
+	was useful back when bots spamming phishing links was at its worst just to
+	help stop them. There is a somewhat maintained list of websites and bad urls
+	that will get a user banned.
+	
+	!recentspammers
+	
+	
+* isspammer <username>
+	
+	Check if a user is on the list of spammers
+	
+	!isspammer randomguy14
+	
+	
+* unspammer <username>
+	
+	Remove a credible user from the spammer list
+	
+	!unspammer randomguy14
+	
+	
+* alcadiscord
+	
+	Check if the broadcaster is in their Discord server. Only usable in
+	supported channels because of certain server requirements
+	
+	!alcadiscord
+	
+	
+* h1z1status
+	
+	Check the H1Z1 server status
+	
+	!h1z1status
+	
+	
+* h1z1db <...search>
+	
+	Search the H1Z1 database for something
+	
+	!h1z1db shirt
+	!h1z1db bullet
+	
+	
+* cputemp
+	
+	Get the host computer's current temperature. Mainly for me to use to quickly
+	check what my CPU is running at.
+	
+	!cputemp
+	
+	
+* qualityoptions [channel]
+	
+	Check if you currently have quality options. DO NOT SPAM
+	
+	!qualityoptions
+	!qualityoptions randomguy14
+	!qualityoptions Thanks4TheDome
+	
+	
+* alcaweather <...location>
+	
+	Get the weather for a location
+	
+	!alcaweather Houston
+	!alcaweather London
+	!alcaweather London, US
+	!alcaweather Kansas
+	!alcaweather Kansas City
+	
+	
+* alcauptime [channel]
+	
+	Get the current stream uptime
+	
+	!alcauptime
+	!alcauptime Thanks4TheDome
+	
+	
+* emotes
+	
+	Get a list of channel emotes (partner). Ask me to set this up. Only works if
+	the bot is subscribed to the channel.
+	
+	!emotes
+	
+	
+* bttvemotes
+	
+	Get a list of available BTTV emotes
+	
+	!bttvemotes
+	
+	
+* askfm <profile name>
+	
+	Get the last answer on a user's ASK.fm page
+	
+	
+* csgostats <vanity url id / steamID64 / profile URL> <...stat name>
+	
+	Get CSGO statistics for a user
+	
+	!csgostats alcam time
+	!csgostats alcam kills knife
+	!csgostats alcam hits ak47
+	!csgostats alcam shots ak47
+	... Many more
+	
+	
+* twitterfollowing <Twitter handle> <Twitter handle>
+	
+	Check if a user on Twitter is following another. Use their @'s without the @
+	
+	!twitterfollowing AlcaMagic Thanks4TheDome
+	!twitterfollowing Thanks4TheDome Johnny_VITO
+	
+	
+* alcacountdown <...valid date>
+	
+	Get the time until/since a date. Must be able to be parsed by Javascript's
+	Date constructor. May support remembering the last countdown per channel as
+	set by the broadcaster so that you don't have to remember what time you put
+	in previously.
+	
+	!alcacountdown Jan 1 2017 12:00 am CST
+	In the future
+		!alcacountdown Jan 1 2017 12:00 am CST
+		!alcacountdown
+	
+	
+* strawpollstatus <Strawpoll ID>
+	
+	Check a strawpoll status
+	
+	!strawpollstatus 6572076
+	
+	
+* lastearthquake
+	
+	Get the last significant earthquake
+	
+	!lastearthquake
+	
+	
+* steamgroupmembercount [group vanity url name]
+	
+	Get a count of how many users are in a Steam group
+	
+	Using the channel name as the group url name:
+		!steamgroupmembercount
+	!steamgroupmembercount sharkfeet
+	!steamgroupmembercount dinosower
+	
+	
+* addcommand <command name> <...command reply>
+	
+	Add a custom channel command. You may not use a "/" command like "/ban
+	<name>" because anyone can use a custom channel command (for now). There are
+	some command variables available:
+		%user% - The name of the user running the command
+		%target% - The first inputted parameter
+		%all% - All of the text after the command
+		%rest% - All but the first text after the command
+		%date% - The current date (defaults to CST... ask me to set up your TZ)
+		%dotw% - Day of the week (CST)
+		%time% - The current time (CST)
+		%timezone% - The currently set timezone (recommended)
+	
+	!addcommand !butts DendiFace / Hello %user%
+	!addcommand ShAmOna /me HEE HEE
+	
+	
+* removecommand <command name>
+	
+	Remove a custom channel command
+	
+	!removecommand !butts
+	!removecommand sHaMoNA
+	
+	
+* editcommand <command name> <...command reply>
+	
+	!editcommand !butts nickmercsAMPZ smileyW
+	!editcommand SHAmona TEE BEE KNEE KEE
+	
+	
+* listcommands
+	
+	List your custom channel commands
+	
+	!listcommands
+	
+	
+* getcommand <command name>
+	
+	Get the raw text for a command. Useful if you have command variables
+	
+	!getcommand !butts
+	!getcommand !shamona
+	
+	
+* alcabot <docs / wiki / leave>
+	
+	Various commands...
+	
+	Get a link to the main documentation website:
+		!alcabot docs
+	Get a link to the Alcabot GitHub wiki (not finished as of 1/24/2016)
+		!alcabot wiki
+	Make Alcabot leave. It will return on restart though. Consult me!
+		!alcabot leave

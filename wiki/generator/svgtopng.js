@@ -13,8 +13,8 @@
 					defaultWidth: 18,
 					defaultHeight: 18
 				})
-			.then((data) => {
-					
+			.then(() => {
+					console.log('Done!');
 				});
 	}
 
