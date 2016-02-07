@@ -579,3 +579,34 @@ to Tweet me: @AlcaMagic
 	!reverseuserid 1
 	!reverseuserid 7676884
 	!reverseuserid 29740912
+
+
+
+* ChatLines <username>
+
+Gets the amount of chat lines seen by Alcabot for a username
+
+	!chatlines me
+	!chatlines alca
+	!chatlines Thanks4TheDome
+
+
+
+* LastTweet [@]<screen name>
+
+Gets the last Tweet for a user on Twitter (@ name)
+
+	!lasttweet AlcaMagic
+	!lasttweet Thanks4TheDome
+	!lasttweet @Johnny_VITO
+
+
+
+* LastYouTubeVideo <channel name>
+
+Get the latest video for a YouTube channel. Only works for vanity URL usernames
+currently.
+
+	!lastyoutubevideo pewdiepie
+	!lastyoutubevideo CaseyNeistat
+	!lastyoutubevideo xEnragedCinema
