@@ -630,7 +630,7 @@ Get the latest past-broadcast for a Twitch channel.
 !lastpbc pootie33
 
 
-* FollowingCount <channel nam e>
+* FollowingCount <channel name>
 
 Get how many channels you are following.
 
