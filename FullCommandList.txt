@@ -49,8 +49,8 @@ to Tweet me: @AlcaMagic
 	!followers
 	!followers me
 	!follows Thanks4TheDome
-	
-	
+
+
 * FirstFollower/SecondFollower/ThirdFollower [channel]
 	
 	Get your first/second/third follower
@@ -58,8 +58,8 @@ to Tweet me: @AlcaMagic
 	!firstfollower
 	!secondfollower me
 	!thirdfollower Thanks4TheDome
-	
-	
+
+
 * FirstFollowed/SecondFollowed/ThirdFollowed [username]
 	
 	Get your first/second/third follower
@@ -67,8 +67,8 @@ to Tweet me: @AlcaMagic
 	!firstfollowed
 	!secondfollowed me
 	!thirdfollowed Thanks4TheDome
-	
-	
+
+
 * LastFollowers [channel]
 	
 	Get a list of your last followers
@@ -76,8 +76,8 @@ to Tweet me: @AlcaMagic
 	!lastfollowers
 	!lastfollowers me
 	!recentfollowers Thanks4TheDome
-	
-	
+
+
 * Following [username] [channel]
 	
 	Check if a user is following and how long ago
@@ -86,24 +86,24 @@ to Tweet me: @AlcaMagic
 	!following Thanks4TheDome
 	!followed me Thanks4TheDome
 	!isfollowing JohnnyVITO Thanks4TheDome
-	
-	
+
+
 * FollowerGoal [goal (int)]
 	
 	Set your follower goal
 	
 	!followergoal
 	!followgoal 10000
-	
-	
+
+
 * SubGoal [goal (int)]
 	
 	Set your subscriber goal
 	
 	!subgoal
 	!subgoal 10000
-	
-	
+
+
 * IsPartner [channel]
 	
 	Check if a user is partnered
@@ -111,80 +111,80 @@ to Tweet me: @AlcaMagic
 	!ispartner
 	!partner me
 	!partnered Thanks4TheDome
-	
-	
+
+
 * FollowingHosts [username]
 	
 	Get how many channels you are following is hosting.
 	
 	!followinghosts
 	!followinghosts 
-	
-	
+
+
 * Status [channel]
 	
 	Check your current status/title
 	
 	!status
 	!title Thanks4TheDome
-	
-	
+
+
 * Game [channel]
 	
 	Check your current game
 	
 	!game
 	!playing Thanks4TheDome
-	
-	
+
+
 * FPS [channel]
 	
 	Check your average stream FPS
 	
 	!fps
 	!streamfps Thanks4TheDome
-	
-	
+
+
 * StreamRes [channel]
 	
 	Check your current stream resolution
 	
 	!streamres
 	!streamresolution Thanks4TheDome
-	
-	
+
+
 * Chatters [channel]
 	
 	Check your current chatter count
 	
 	!chatters
 	!chatters Thanks4TheDome
-	
-	
+
+
 * IsHere <username> [channel]
 	
 	Check if a user is here
 	
 	!ishere Thanks4TheDome
 	!ishere JohnnyVITO Thanks4TheDome
-	
-	
+
+
 * Viewers [channel]
 	
 	Check the current viewer count
 	
 	!viewers
 	!viewers Thanks4TheDome
-	
-	
+
+
 * ChannelViews [channel]
 	
 	Check your channel view count
 	
 	!channelviews
 	!channelviews Thanks4TheDome
-	
-	
+
+
 * ChannelStats [channel]
 	
 	Check your channel stats (combines !viewers, !chatters, and !hosts). This
@@ -192,31 +192,31 @@ to Tweet me: @AlcaMagic
 	
 	!channelstats
 	!channelstats Thanks4TheDome
-	
-	
+
+
 * Hosting [channel]
 	
 	Check who you're hosting
 	
 	!hosting
 	!hosting Thanks4TheDome
-	
-	
+
+
 * Hosts [channel]
 	
 	Check how many hosts you have
 	
 	!hosts
 	!hosts Thanks4TheDome
-	
-	
+
+
 * LinkToHost
 	
 	Automatically give a link to the channel you're hosting (once you've hosted)
 	
 	!linktohost
-	
-	
+
+
 * Created [username / id:<id>]
 	
 	Check how long ago you created your account
@@ -225,8 +225,8 @@ to Tweet me: @AlcaMagic
 	!created this
 	!created Thanks4TheDome
 	!created id:7676884
-	
-	
+
+
 * TwitchStats [game / "this"]
 	
 	Check Twitch's statistics for all of Twitch or for a specific game
@@ -236,22 +236,22 @@ to Tweet me: @AlcaMagic
 	This channel's game's stats:
 		!twitchstats this
 	!twitchstats Call of Duty: Black Ops III
-	
-	
+
+
 * TwitchStatus
 	
 	Check twitchstatus.com ... Just reports offline servers
 	
 	!twitchstatus
-	
-	
+
+
 * Subs
 	
 	Check your current sub count (partner)
 	
 	!subs
-	
-	
+
+
 * LastSub
 	
 	Get a list of your last subscribers (partner)
@@ -259,8 +259,8 @@ to Tweet me: @AlcaMagic
 	!lastsub
 	!lastsubscribers
 	!recentsubs
-	
-	
+
+
 * OldestSub
 	
 	Check your oldest active subscriber (partner)
@@ -268,16 +268,16 @@ to Tweet me: @AlcaMagic
 	!oldestsub
 	!longestsub
 	!firstsub
-	
-	
+
+
 * IsSub [username]
 	
 	Check if someone is subscribed (partner)
 	
 	!issub
 	!checksub Thanks4TheDome
-	
-	
+
+
 * SubsToday
 	
 	Get a count of how many subs you've gotten since you started the stream
@@ -285,38 +285,38 @@ to Tweet me: @AlcaMagic
 	
 	!substoday
 	!dailysubs
-	
-	
+
+
 * LastSeen <username>
 	
 	Find out the last time Alcabot saw a user in a channel it's in
 	
 	!lastseen Thanks4TheDome
-	
-	
+
+
 * NameAvailable <name>
 	
 	Check if a username is available. This uses the same API as when you're
 	signing up for an account
 	
 	!nameavailable TurtleButtStuff
-	
-	
+
+
 * Frac <...expression>
 	
 	Simplify an expression to at most n/100
 	
 	!frac 458/813
 	!frac 0.563345
-	
-	
+
+
 * MoonPhase
 	
 	Get the current moonphase
 	
 	!moonphase
-	
-	
+
+
 * Math <...expression>
 	
 	Evaluate a math expression. You can define variables but it won't solve for
@@ -325,16 +325,16 @@ to Tweet me: @AlcaMagic
 	!math 9 + 10
 	!math apple = 4; apple^apple
 	!math cos(sin(tan(random(E)) * 8) * PI)
-	
-	
+
+
 * Define <word>
 	
 	Retrieve the definition of a word. Allows only 1 word and always picks the
 	first definition in the list. Uses Wolfram|Alpha as the dictionary
 	
 	!define cat
-	
-	
+
+
 * Thesaurus <word>
 	
 	Retrieves a list of synonyms for a word. Allows only 1 word. Uses
@@ -342,8 +342,8 @@ to Tweet me: @AlcaMagic
 	
 	!thesaurus apply
 	!thesaurus come
-	
-	
+
+
 * RecentSpammers
 	
 	Gets a list of the most recent spammers. The list of spammers comes from
@@ -354,53 +354,53 @@ to Tweet me: @AlcaMagic
 	that will get a user banned.
 	
 	!recentspammers
-	
-	
+
+
 * IsSpammer <username>
 	
 	Check if a user is on the list of spammers
 	
 	!isspammer randomguy14
-	
-	
+
+
 * Unspammer <username>
 	
 	Remove a credible user from the spammer list
 	
 	!unspammer randomguy14
-	
-	
+
+
 * AlcaDiscord
 	
 	Check if the broadcaster is in their Discord server. Only usable in
 	supported channels because of certain server requirements
 	
 	!alcadiscord
-	
-	
+
+
 * H1Z1Status
 	
 	Check the H1Z1 server status
 	
 	!h1z1status
-	
-	
+
+
 * H1Z1DB <...search>
 	
 	Search the H1Z1 database for something
 	
 	!h1z1db shirt
 	!h1z1db bullet
-	
-	
+
+
 * CPUTemp
 	
 	Get the host computer's current temperature. Mainly for me to use to quickly
 	check what my CPU is running at.
 	
 	!cputemp
-	
-	
+
+
 * QualityOptions [channel]
 	
 	Check if you currently have quality options. DO NOT SPAM
@@ -408,8 +408,8 @@ to Tweet me: @AlcaMagic
 	!qualityoptions
 	!qualityoptions randomguy14
 	!qualityoptions Thanks4TheDome
-	
-	
+
+
 * AlcaWeather <...location>
 	
 	Get the weather for a location
@@ -419,36 +419,36 @@ to Tweet me: @AlcaMagic
 	!alcaweather London, US
 	!alcaweather Kansas
 	!alcaweather Kansas City
-	
-	
+
+
 * AlcaUptime [channel]
 	
 	Get the current stream uptime
 	
 	!alcauptime
 	!alcauptime Thanks4TheDome
-	
-	
+
+
 * Emotes
 	
 	Get a list of channel emotes (partner). Ask me to set this up. Only works if
 	the bot is subscribed to the channel.
 	
 	!emotes
-	
-	
+
+
 * BTTVEmotes
 	
 	Get a list of available BTTV emotes
 	
 	!bttvemotes
-	
-	
+
+
 * AskFM <profile name>
 	
 	Get the last answer on a user's ASK.fm page
-	
-	
+
+
 * CSGOStats <vanity url id / steamID64 / profile URL> <...stat name>
 	
 	Get CSGO statistics for a user
@@ -458,16 +458,16 @@ to Tweet me: @AlcaMagic
 	!csgostats alcam hits ak47
 	!csgostats alcam shots ak47
 	... Many more
-	
-	
+
+
 * TwitterFollowing <Twitter handle> <Twitter handle>
 	
 	Check if a user on Twitter is following another. Use their @'s without the @
 	
 	!twitterfollowing AlcaMagic Thanks4TheDome
 	!twitterfollowing Thanks4TheDome Johnny_VITO
-	
-	
+
+
 * AlcaCountdown <...valid date>
 	
 	Get the time until/since a date. Must be able to be parsed by Javascript's
@@ -479,22 +479,22 @@ to Tweet me: @AlcaMagic
 	In the future
 		!alcacountdown Jan 1 2017 12:00 am CST
 		!alcacountdown
-	
-	
+
+
 * StrawpollStatus <Strawpoll ID>
 	
 	Check a strawpoll status
 	
 	!strawpollstatus 6572076
-	
-	
+
+
 * LastEarthquake
 	
 	Get the last significant earthquake
 	
 	!lastearthquake
-	
-	
+
+
 * SteamGroupMemberCount [group vanity url name]
 	
 	Get a count of how many users are in a Steam group
@@ -503,8 +503,8 @@ to Tweet me: @AlcaMagic
 		!steamgroupmembercount
 	!steamgroupmembercount sharkfeet
 	!steamgroupmembercount dinosower
-	
-	
+
+
 * AddCommand <command name> <...command reply>
 	
 	Add a custom channel command. You may not use a "/" command like "/ban
@@ -521,37 +521,37 @@ to Tweet me: @AlcaMagic
 	
 	!addcommand !butts DendiFace / Hello %user%
 	!addcommand ShAmOna /me HEE HEE
-	
-	
+
+
 * RemoveCommand <command name>
 	
 	Remove a custom channel command
 	
 	!removecommand !butts
 	!removecommand sHaMoNA
-	
-	
+
+
 * EditCommand <command name> <...command reply>
 	
 	!editcommand !butts nickmercsAMPZ smileyW
 	!editcommand SHAmona TEE BEE KNEE KEE
-	
-	
+
+
 * ListCommands
 	
 	List your custom channel commands
 	
 	!listcommands
-	
-	
+
+
 * GetCommand <command name>
 	
 	Get the raw text for a command. Useful if you have command variables
 	
 	!getcommand !butts
 	!getcommand !shamona
-	
-	
+
+
 * AlcaBot <docs / wiki / leave>
 	
 	Various commands...
@@ -582,7 +582,6 @@ to Tweet me: @AlcaMagic
 	!reverseuserid 29740912
 
 
-
 * ChatLines [username]
 
 Gets the amount of chat lines seen by Alcabot for a username
@@ -592,7 +591,6 @@ Gets the amount of chat lines seen by Alcabot for a username
 	!chatlines Thanks4TheDome
 
 
-
 * LastTweet <[@]screen name>
 
 Gets the last Tweet for a user on Twitter (@ name)
@@ -600,7 +598,6 @@ Gets the last Tweet for a user on Twitter (@ name)
 	!lasttweet AlcaMagic
 	!lasttweet Thanks4TheDome
 	!lasttweet @Johnny_VITO
-
 
 
 * LastYouTubeVideo <channel name>
@@ -613,7 +610,6 @@ currently.
 	!lastyoutubevideo xEnragedCinema
 
 
-
 * LastVOD <channel name>
 
 Get the latest video for a Twitch channel.
@@ -622,7 +618,6 @@ Get the latest video for a Twitch channel.
 !lastvideo Thanks4TheDome
 !lasthighlight JohnnyVITO
 !lastvod pootie33
-
 
 
 * LastBroadcast <channel name>
@@ -635,8 +630,7 @@ Get the latest past-broadcast for a Twitch channel.
 !lastpbc pootie33
 
 
-
-* FollowingCount <channel name>
+* FollowingCount <channel nam e>
 
 Get how many channels you are following.
 
