@@ -53,7 +53,7 @@ to Tweet me: @AlcaMagic
 
 * FirstFollower/SecondFollower/ThirdFollower [channel]
 	
-	Get your first/second/third follower
+	Get your first/second/third follower.
 	
 	!firstfollower
 	!secondfollower me
@@ -62,7 +62,7 @@ to Tweet me: @AlcaMagic
 
 * FirstFollowed/SecondFollowed/ThirdFollowed [username]
 	
-	Get your first/second/third follower
+	Get your first/second/third follower.
 	
 	!firstfollowed
 	!secondfollowed me
@@ -71,7 +71,7 @@ to Tweet me: @AlcaMagic
 
 * LastFollowers [channel]
 	
-	Get a list of your last followers
+	Get a list of your last followers.
 	
 	!lastfollowers
 	!lastfollowers me
@@ -80,7 +80,7 @@ to Tweet me: @AlcaMagic
 
 * Following [username] [channel]
 	
-	Check if a user is following and how long ago
+	Check if a user is following and how long ago.
 	
 	!following
 	!following Thanks4TheDome
@@ -90,7 +90,7 @@ to Tweet me: @AlcaMagic
 
 * FollowerGoal [goal (int)]
 	
-	Set your follower goal
+	Set your follower goal.
 	
 	!followergoal
 	!followgoal 10000
@@ -98,7 +98,7 @@ to Tweet me: @AlcaMagic
 
 * SubGoal [goal (int)]
 	
-	Set your subscriber goal
+	Set your subscriber goal.
 	
 	!subgoal
 	!subgoal 10000
@@ -106,7 +106,7 @@ to Tweet me: @AlcaMagic
 
 * IsPartner [channel]
 	
-	Check if a user is partnered
+	Check if a user is partnered.
 	
 	!ispartner
 	!partner me
@@ -123,7 +123,7 @@ to Tweet me: @AlcaMagic
 
 * Status [channel]
 	
-	Check your current status/title
+	Check your current status/title.
 	
 	!status
 	!title Thanks4TheDome
@@ -131,7 +131,7 @@ to Tweet me: @AlcaMagic
 
 * Game [channel]
 	
-	Check your current game
+	Check your current game.
 	
 	!game
 	!playing Thanks4TheDome
@@ -139,7 +139,7 @@ to Tweet me: @AlcaMagic
 
 * FPS [channel]
 	
-	Check your average stream FPS
+	Check your average stream FPS.
 	
 	!fps
 	!streamfps Thanks4TheDome
@@ -147,7 +147,7 @@ to Tweet me: @AlcaMagic
 
 * StreamRes [channel]
 	
-	Check your current stream resolution
+	Check your current stream resolution.
 	
 	!streamres
 	!streamresolution Thanks4TheDome
@@ -155,7 +155,7 @@ to Tweet me: @AlcaMagic
 
 * Chatters [channel]
 	
-	Check your current chatter count
+	Check your current chatter count.
 	
 	!chatters
 	!chatters Thanks4TheDome
@@ -163,7 +163,7 @@ to Tweet me: @AlcaMagic
 
 * IsHere <username> [channel]
 	
-	Check if a user is here
+	Check if a user is here.
 	
 	!ishere Thanks4TheDome
 	!ishere JohnnyVITO Thanks4TheDome
@@ -171,7 +171,7 @@ to Tweet me: @AlcaMagic
 
 * Viewers [channel]
 	
-	Check the current viewer count
+	Check the current viewer count.
 	
 	!viewers
 	!viewers Thanks4TheDome
@@ -179,7 +179,7 @@ to Tweet me: @AlcaMagic
 
 * ChannelViews [channel]
 	
-	Check your channel view count
+	Check your channel view count.
 	
 	!channelviews
 	!channelviews Thanks4TheDome
@@ -188,7 +188,7 @@ to Tweet me: @AlcaMagic
 * ChannelStats [channel]
 	
 	Check your channel stats (combines !viewers, !chatters, and !hosts). This
-	command may fail due to an error in the Twitch API
+	command may fail due to an error in the Twitch API.
 	
 	!channelstats
 	!channelstats Thanks4TheDome
@@ -196,7 +196,7 @@ to Tweet me: @AlcaMagic
 
 * Hosting [channel]
 	
-	Check who you're hosting
+	Check who you're hosting.
 	
 	!hosting
 	!hosting Thanks4TheDome
@@ -204,7 +204,7 @@ to Tweet me: @AlcaMagic
 
 * Hosts [channel]
 	
-	Check how many hosts you have
+	Check how many hosts you have.
 	
 	!hosts
 	!hosts Thanks4TheDome
@@ -212,14 +212,14 @@ to Tweet me: @AlcaMagic
 
 * LinkToHost
 	
-	Automatically give a link to the channel you're hosting (once you've hosted)
+	Automatically give a link to the channel you're hosting (once you've hosted).
 	
 	!linktohost
 
 
 * Created [username / id:<id>]
 	
-	Check how long ago you created your account
+	Check how long ago you created your account.
 	
 	!created
 	!created this
@@ -229,7 +229,7 @@ to Tweet me: @AlcaMagic
 
 * TwitchStats [game / "this"]
 	
-	Check Twitch's statistics for all of Twitch or for a specific game
+	Check Twitch's statistics for all of Twitch or for a specific game.
 	
 	Global stats:
 		!twitchstats
@@ -240,21 +240,21 @@ to Tweet me: @AlcaMagic
 
 * TwitchStatus
 	
-	Check twitchstatus.com ... Just reports offline servers
+	Check twitchstatus.com ... Just reports offline servers.
 	
 	!twitchstatus
 
 
 * Subs
 	
-	Check your current sub count (partner)
+	Check your current sub count. (partner)
 	
 	!subs
 
 
 * LastSub
 	
-	Get a list of your last subscribers (partner)
+	Get a list of your last subscribers. (partner)
 	
 	!lastsub
 	!lastsubscribers
@@ -263,7 +263,7 @@ to Tweet me: @AlcaMagic
 
 * OldestSub
 	
-	Check your oldest active subscriber (partner)
+	Check your oldest active subscriber. (partner)
 	
 	!oldestsub
 	!longestsub
@@ -272,7 +272,7 @@ to Tweet me: @AlcaMagic
 
 * IsSub [username]
 	
-	Check if someone is subscribed (partner)
+	Check if someone is subscribed. (partner)
 	
 	!issub
 	!checksub Thanks4TheDome
@@ -280,7 +280,7 @@ to Tweet me: @AlcaMagic
 
 * SubsToday
 	
-	Get a count of how many subs you've gotten since you started the stream
+	Get a count of how many subs you've gotten since you started the stream.
 	(partner)
 	
 	!substoday
@@ -289,7 +289,7 @@ to Tweet me: @AlcaMagic
 
 * LastSeen <username>
 	
-	Find out the last time Alcabot saw a user in a channel it's in
+	Find out the last time Alcabot saw a user in a channel it's in.
 	
 	!lastseen Thanks4TheDome
 
@@ -297,14 +297,14 @@ to Tweet me: @AlcaMagic
 * NameAvailable <name>
 	
 	Check if a username is available. This uses the same API as when you're
-	signing up for an account
+	signing up for an account.
 	
 	!nameavailable TurtleButtStuff
 
 
 * Frac <...expression>
 	
-	Simplify an expression to at most n/100
+	Simplify an expression to at most n/100.
 	
 	!frac 458/813
 	!frac 0.563345
@@ -312,7 +312,7 @@ to Tweet me: @AlcaMagic
 
 * MoonPhase
 	
-	Get the current moonphase
+	Get the current moonphase.
 	
 	!moonphase
 
@@ -320,7 +320,7 @@ to Tweet me: @AlcaMagic
 * Math <...expression>
 	
 	Evaluate a math expression. You can define variables but it won't solve for
-	any variables for you. (Math.js)
+	any variables for you. (uses Math.js)
 	
 	!math 9 + 10
 	!math apple = 4; apple^apple
@@ -330,7 +330,7 @@ to Tweet me: @AlcaMagic
 * Define <word>
 	
 	Retrieve the definition of a word. Allows only 1 word and always picks the
-	first definition in the list. Uses Wolfram|Alpha as the dictionary
+	first definition in the list. Uses Wolfram|Alpha as the dictionary.
 	
 	!define cat
 
@@ -338,7 +338,7 @@ to Tweet me: @AlcaMagic
 * Thesaurus <word>
 	
 	Retrieves a list of synonyms for a word. Allows only 1 word. Uses
-	Wolfram|Alpha as the thesaurus
+	Wolfram|Alpha as the thesaurus.
 	
 	!thesaurus apply
 	!thesaurus come
@@ -358,14 +358,14 @@ to Tweet me: @AlcaMagic
 
 * IsSpammer <username>
 	
-	Check if a user is on the list of spammers
+	Check if a user is on the list of spammers.
 	
 	!isspammer randomguy14
 
 
 * Unspammer <username>
 	
-	Remove a credible user from the spammer list
+	Remove a credible user from the spammer list.
 	
 	!unspammer randomguy14
 
@@ -373,21 +373,21 @@ to Tweet me: @AlcaMagic
 * AlcaDiscord
 	
 	Check if the broadcaster is in their Discord server. Only usable in
-	supported channels because of certain server requirements
+	supported channels because of certain server requirements.
 	
 	!alcadiscord
 
 
 * H1Z1Status
 	
-	Check the H1Z1 server status
+	Check the H1Z1 server status.
 	
 	!h1z1status
 
 
 * H1Z1DB <...search>
 	
-	Search the H1Z1 database for something
+	Search the H1Z1 database for something.
 	
 	!h1z1db shirt
 	!h1z1db bullet
@@ -403,7 +403,7 @@ to Tweet me: @AlcaMagic
 
 * QualityOptions [channel]
 	
-	Check if you currently have quality options. DO NOT SPAM
+	Check if you currently have quality options. DO NOT SPAM THIS
 	
 	!qualityoptions
 	!qualityoptions randomguy14
@@ -412,7 +412,7 @@ to Tweet me: @AlcaMagic
 
 * AlcaWeather <...location>
 	
-	Get the weather for a location
+	Get the weather for a location.
 	
 	!alcaweather Houston
 	!alcaweather London
@@ -423,7 +423,7 @@ to Tweet me: @AlcaMagic
 
 * AlcaUptime [channel]
 	
-	Get the current stream uptime
+	Get the current stream uptime.
 	
 	!alcauptime
 	!alcauptime Thanks4TheDome
@@ -439,19 +439,22 @@ to Tweet me: @AlcaMagic
 
 * BTTVEmotes
 	
-	Get a list of available BTTV emotes
+	Get a list of available BTTV emotes.
 	
 	!bttvemotes
 
 
 * AskFM <profile name>
 	
-	Get the last answer on a user's ASK.fm page
+	Get the last answer on a user's ASK.fm page.
+	
+	!askfm
+	!askfm thanks4thedome
 
 
 * CSGOStats <vanity url id / steamID64 / profile URL> <...stat name>
 	
-	Get CSGO statistics for a user
+	Get CSGO statistics for a user.
 	
 	!csgostats alcam time
 	!csgostats alcam kills knife
@@ -463,6 +466,7 @@ to Tweet me: @AlcaMagic
 * TwitterFollowing <Twitter handle> <Twitter handle>
 	
 	Check if a user on Twitter is following another. Use their @'s without the @
+	before it.
 	
 	!twitterfollowing AlcaMagic Thanks4TheDome
 	!twitterfollowing Thanks4TheDome Johnny_VITO
@@ -483,21 +487,21 @@ to Tweet me: @AlcaMagic
 
 * StrawpollStatus <Strawpoll ID>
 	
-	Check a strawpoll status
+	Check a strawpoll status.
 	
 	!strawpollstatus 6572076
 
 
 * LastEarthquake
 	
-	Get the last significant earthquake
+	Get the last significant earthquake.
 	
 	!lastearthquake
 
 
 * SteamGroupMemberCount [group vanity url name]
 	
-	Get a count of how many users are in a Steam group
+	Get a count of how many users are in a Steam group.
 	
 	Using the channel name as the group url name:
 		!steamgroupmembercount
@@ -525,7 +529,7 @@ to Tweet me: @AlcaMagic
 
 * RemoveCommand <command name>
 	
-	Remove a custom channel command
+	Remove a custom channel command.
 	
 	!removecommand !butts
 	!removecommand sHaMoNA
@@ -533,20 +537,22 @@ to Tweet me: @AlcaMagic
 
 * EditCommand <command name> <...command reply>
 	
+	Edit a custom channel command.
+	
 	!editcommand !butts nickmercsAMPZ smileyW
 	!editcommand SHAmona TEE BEE KNEE KEE
 
 
 * ListCommands
 	
-	List your custom channel commands
+	List your custom channel commands.
 	
 	!listcommands
 
 
 * GetCommand <command name>
 	
-	Get the raw text for a command. Useful if you have command variables
+	Get the raw text for a command. Useful if you have command variables.
 	
 	!getcommand !butts
 	!getcommand !shamona
@@ -562,11 +568,11 @@ to Tweet me: @AlcaMagic
 		!alcabot wiki
 	Make Alcabot leave. It will return on restart though. Consult me!
 		!alcabot leave
-
+	And more...
 
 * UserID [username]
 	
-	Gets your account's ID
+	Gets your account's ID.
 	
 	!userid
 	!userid me
@@ -575,7 +581,7 @@ to Tweet me: @AlcaMagic
 
 * ReverseUserID <id>
 	
-	Gets the username for an ID
+	Gets the username for an ID.
 
 	!reverseuserid 1
 	!reverseuserid 7676884
@@ -584,20 +590,30 @@ to Tweet me: @AlcaMagic
 
 * ChatLines [username]
 
-Gets the amount of chat lines seen by Alcabot for a username
+Gets the amount of chat lines seen by Alcabot for a username.
 
 	!chatlines
 	!chatlines alca
 	!chatlines Thanks4TheDome
 
 
-* LastTweet <[@]screen name>
+* LastTweet [[@]screen name]
 
-Gets the last Tweet for a user on Twitter (@ name)
+Gets the last Tweet for a user on Twitter (@ name). Defaults to channel name.
 
+	!lasttweet
 	!lasttweet AlcaMagic
 	!lasttweet Thanks4TheDome
 	!lasttweet @Johnny_VITO
+
+
+* GetTweet <tweet url or id>
+
+Gets a Tweet by ID.
+
+	!lasttweet https://twitter.com/AlcaMagic/status/676985715377487872
+	!lasttweet 676985715377487872
+	!lasttweet https://twitter.com/Thanks4TheDome/status/700620872042688513
 
 
 * LastYouTubeVideo <channel name>
