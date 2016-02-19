@@ -630,27 +630,27 @@ currently.
 
 Get the latest video for a Twitch channel.
 
-!lastvod
-!lastvideo Thanks4TheDome
-!lasthighlight JohnnyVITO
-!lastvod pootie33
+	!lastvod
+	!lastvideo Thanks4TheDome
+	!lasthighlight JohnnyVITO
+	!lastvod pootie33
 
 
 * LastBroadcast <channel name>
 
 Get the latest past-broadcast for a Twitch channel.
 
-!lastbroadcast
-!lastbc Thanks4TheDome
-!lastpastbroadcast JohnnyVITO
-!lastpbc pootie33
+	!lastbroadcast
+	!lastbc Thanks4TheDome
+	!lastpastbroadcast JohnnyVITO
+	!lastpbc pootie33
 
 
 * FollowingCount <channel name>
 
 Get how many channels you are following.
 
-!followingcount
-!followingcount Thanks4TheDome
-!lastpastbroadcast JohnnyVITO
-!lastpbc pootie33
+	!followingcount
+	!followingcount Thanks4TheDome
+	!lastpastbroadcast JohnnyVITO
+	!lastpbc pootie33
