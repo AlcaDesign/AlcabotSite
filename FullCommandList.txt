@@ -283,6 +283,7 @@ to Tweet me: @AlcaMagic
 	Get a count of how many subs you've gotten since you started the stream
 	(partner)
 	
+	!substoday
 	!dailysubs
 	
 	
@@ -582,17 +583,17 @@ to Tweet me: @AlcaMagic
 
 
 
-* ChatLines <username>
+* ChatLines [username]
 
 Gets the amount of chat lines seen by Alcabot for a username
 
-	!chatlines me
+	!chatlines
 	!chatlines alca
 	!chatlines Thanks4TheDome
 
 
 
-* LastTweet [@]<screen name>
+* LastTweet <[@]screen name>
 
 Gets the last Tweet for a user on Twitter (@ name)
 
@@ -610,3 +611,36 @@ currently.
 	!lastyoutubevideo pewdiepie
 	!lastyoutubevideo CaseyNeistat
 	!lastyoutubevideo xEnragedCinema
+
+
+
+* LastVOD <channel name>
+
+Get the latest video for a Twitch channel.
+
+!lastvod
+!lastvideo Thanks4TheDome
+!lasthighlight JohnnyVITO
+!lastvod pootie33
+
+
+
+* LastBroadcast <channel name>
+
+Get the latest past-broadcast for a Twitch channel.
+
+!lastbroadcast
+!lastbc Thanks4TheDome
+!lastpastbroadcast JohnnyVITO
+!lastpbc pootie33
+
+
+
+* FollowingCount <channel name>
+
+Get how many channels you are following.
+
+!followingcount
+!followingcount Thanks4TheDome
+!lastpastbroadcast JohnnyVITO
+!lastpbc pootie33
