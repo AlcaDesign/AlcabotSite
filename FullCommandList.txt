@@ -654,3 +654,13 @@ Get how many channels you are following.
 	!followingcount Thanks4TheDome
 	!lastpastbroadcast JohnnyVITO
 	!lastpbc pootie33
+
+
+* TwitterStats [[@]screen name]
+
+Gets the stats for a user on Twitter (@ name). Defaults to channel name.
+
+	!twitterstats
+	!twitterstats Thanks4TheDome
+	!twitterstats JohnnyVITO
+	!twitterstats pootie33
