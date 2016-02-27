@@ -611,9 +611,9 @@ Gets the last Tweet for a user on Twitter (@ name). Defaults to channel name.
 
 Gets a Tweet by ID.
 
-	!lasttweet https://twitter.com/AlcaMagic/status/676985715377487872
-	!lasttweet 676985715377487872
-	!lasttweet https://twitter.com/Thanks4TheDome/status/700620872042688513
+	!gettweet https://twitter.com/AlcaMagic/status/676985715377487872
+	!gettweet 676985715377487872
+	!gettweet https://twitter.com/Thanks4TheDome/status/700620872042688513
 
 
 * LastYouTubeVideo <channel name>
